@@ -1,0 +1,25 @@
+Instrucciones
+Realizar el juego del Ahorcado.
+Especificaciones:
+El juego consiste en adivinar una palabra oculta que previamente tenemos que introducir en la aplicación.
+El jugador tiene un número de intentos parametrizable para encontrar la palabra oculta que se configura al principio de la partida.
+El jugador introduce una letra, y la aplicación da dos tipos de respuesta:
+Si la letra está en la palabra oculta la muestra en su posición correspondiente, resaltándola con un formato especial
+Si no está en la palabra oculta la muestra en el listado de letras erroneas y disminuye en 1 el número de intentos restantes para encontrar la palabra
+El juego termina de dos formas:
+O el jugador encuentra la palabra oculta antes de agotar todos los intentos => GANA
+O el jugador agota los intentos sin encontrar la palabra => PIERDE
+En ambos casos aparece un mensaje diciendo cual es el resultado de la partida, y preguntando si queremos volver a jugar
+En caso afirmativo vuelve a empezar toda la aplicación otra vez (pide número de intentos, pide palabra oculta, resetea letras erróneas y número de errores)
+En caso negativo se despide y cierra el documento
+CONSIDERACIONES
+La palabra oculta puede tener espacios, estos se señalarán visualmente de alguna forma en el casillero de letras a adivinar, pero no son tenidos en cuenta a la hora de encontrar las letras. Es decir, el jugador no tienen que introducir espacios, de hecho la aplicación mostrará un mensaje de carácter no permitido si lo teclea
+Si repetimos una letra que ya ha sido encontrada en la palabra aparece un mensaje avisando de que esa letra ya está descubierta
+Si repetimos una letra que ya ha sido fallada antes, el juego muestra el mensaje correspondiente, y esa letra NO cuenta como nuevo fallo (ya se contabilizó antes)
+
+ELEMENTOS DEL DOM
+
+Botonera para iniciar juego: Introducir número de intentos que queremos (nivel de dificultad del juego), introducir palabra oculta, comenzar juego.
+Casillero: cada letra de la palabra oculta se convierte en un elemento visual para que sepamos cuantas letras tenemos que adivinar. Puede ser un cuadro, un guión, etc.
+Intput: para que el jugador introduzca la letra buscada
+Marcador: Mostrará información como el número de intentos consumidos, las letras erróneas tecleadas, y opcionalmente el número de letras que quedan para adivinar antes de terminar

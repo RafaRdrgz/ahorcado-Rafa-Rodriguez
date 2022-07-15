@@ -1,0 +1,482 @@
+:root{
+    
+    --azulClaro: #D3EBCD;
+    --azulMedio: #AEDBCE;
+    --azulOscuro: #839AA8;
+    --anyil: #635666;
+    --whitesmoke: whitesmoke;
+
+    --fuentePrincipal: 'Rubik', sans-serif;
+
+}
+
+*, *::before, *::after{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html{ font-size: 62.5%;} /* 1rem = 10 px */
+
+body{ font-size: 1.8rem; font-family: var(--fuentePrincipal); background-color: var(--azulOscuro);}
+
+h1{ font-size: 3.5rem;}
+
+h2{ font-size: 2.8rem;}
+
+h3{ font-size: 2.3rem;}
+
+input{ font-size: 1.8rem;}
+
+
+/*Cabecera*/
+
+.cabecera{
+
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--azulClaro);
+    color: var(--anyil);
+    border-bottom: 2px solid var(--anyil);
+    box-shadow: 2px 2px 1px var(--anyil);
+
+}
+
+a{ text-decoration: none; color: var(--anyil);}
+
+
+.titulo{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.titulo p{ text-shadow: 2px 2px 1px white;}
+
+.titulo::before,
+.titulo::after{
+
+    display: block;
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/ahorcado.png);
+    background-color: whitesmoke;
+    background-size: 100% 100%;
+    margin: 1rem;
+
+}
+
+
+/*Contenedor*/
+
+.contenedor{
+
+    width: min(80% , 120rem);
+    margin: 0 auto;
+}
+
+/*Boton*/
+
+.btn{
+
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: var(--azulClaro);
+    color: var(--anyil);
+    border: 2px solid var(--anyil);
+    font-weight: 700;
+    border-radius: 3rem;
+    transition: all 0.2s ease;
+    box-shadow: 1px 2px 1px var(--anyil);
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: var(--azulClaro);
+    background-color: var(--anyil);
+    border: 2px solid var(--azulClaro);
+    box-shadow: none;
+}
+
+/* Pantalla de Inicio */
+
+#inicio{
+
+    padding: 1rem;
+}
+
+.explicacion{
+
+    width: 60%;
+    margin: 2rem auto 0 auto;
+    padding: 2rem;
+    border: 2px solid var(--anyil);
+    color: var(--anyil);
+    border-radius: 3rem;
+    background-color: var(--whitesmoke);
+    box-shadow: 2px 2px 1px var(--anyil);
+}
+
+.botonera{
+
+    width: 80%;
+    margin: 2rem auto 2rem auto;
+    padding: 2rem;
+    border: 2px solid var(--anyil);
+    border-radius: 1rem;
+    box-shadow: 2px 2px 1px var(--anyil);
+    background-color: var(--azulMedio);
+}
+
+.botonera-label{
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.botonera-input{
+
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 3rem;
+    border: 2px solid var(--anyil);
+    color: var(--anyil);
+    background-color: var(--whitesmoke);
+    border-radius: 3rem;
+    text-align: center;
+    box-shadow: 2px 2px 1px var(--anyil);
+}
+
+.botonera-nombre,
+.botonera-frase,
+.botonera-intentos{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+#btn_comenzar{
+    display: block;
+    width: auto;
+    margin: 0 auto;
+
+}
+
+@media(min-width: 768px){
+
+    .botonera{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .botonera-nombre,
+    .botonera-frase,
+    .botonera-intentos{
+
+        flex-basis: calc(30% - 1rem);
+    }
+
+}
+
+/* Pantalla de juego */
+
+#juego{ padding: 1rem;}
+
+.casillero{
+
+    margin-top: 1rem;
+    background-color: var(--azulMedio);
+    border: 2px solid var(--anyil);
+    border-radius: 1rem;
+    padding: 2rem;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    box-shadow: 2px 2px 1px var(--anyil);
+    
+    transition: all 1s ease;
+}
+
+.oculto{
+
+    font-size: 5rem;
+    flex-basis: 7.5%;
+    text-align: center;
+    border: 2px solid var(--anyil);
+    background-color: var(--whitesmoke);
+    margin: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 1px var(--anyil);
+    transition: all 0.5s ease;
+}
+
+.acertado{
+
+    background-color: lightgreen;
+    border: 2px solid var(--whitesmoke);
+}
+
+.espacio{
+    background-color: lightgray;
+    border: 2px solid black;
+}
+
+.input-juego{
+
+    margin: 2rem auto;
+
+}
+
+.introduce-letra{
+
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-letra,
+.input-letra
+{
+
+    flex-basis: (50% - 1rem);
+}
+
+.label-letra{ margin-right: 1rem;}
+
+.input-letra{ padding: 1rem;
+     border-radius: 3rem; 
+     border: 2px solid var(--anyil); 
+     text-align: center; 
+     color: var(--anyil);
+     background-color: var(--whitesmoke);
+     box-shadow: 2px 2px 1px var(--anyil);
+    }
+
+#btn_buscar{
+
+    display: block;
+    width: 100%;
+
+}
+
+@media(min-width:600px){
+
+    .input-juego{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .introduce-letra{
+
+       display: flex;
+       justify-content: flex-end;
+       align-items: center;
+    }
+
+    #btn_buscar{
+        display: inline-block;
+        width: auto;
+    }
+}
+
+
+.marcador{
+
+    border: 2px solid var(--anyil);
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: var(--azulMedio);
+    box-shadow: 2px 2px 1px var(--anyil);
+}
+
+.marcador-variables{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.marcador-nombre,
+.marcador-restantes,
+.marcador-intentos{
+
+    border: 2px solid var(--anyil);
+    border-radius: 3rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--whitesmoke);
+    box-shadow: 2px 2px 1px var(--anyil);
+    transition: all 0.3s ease;
+}
+
+@media(min-width: 768px){
+
+    .marcador-variables{
+
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .marcador-nombre,
+    .marcador-restantes,
+    .marcador-intentos{
+
+        flex-basis: calc(33% - 1rem);
+        text-align: center;
+    }
+
+}
+
+.erroneas-titulo{
+
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--anyil);
+    text-shadow: 2px 2px 1px white;
+}
+
+.out_erroneas{
+
+    border: 2px solid var(--anyil);
+    border-radius: 1rem;
+    background-color: var(--whitesmoke);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 2px 2px 1px var(--anyil);
+}
+
+.error{
+
+    flex-basis: 5%;
+    color: white;
+    background-color: lightcoral;
+    padding: 1rem;
+    border: 2px solid var(--anyil);
+    border-radius: 1rem;
+    font-weight: 700;
+    margin: 1rem;
+    text-align: center;
+    box-shadow: 1px 2px 1px var(--anyil);
+}
+
+
+
+/* Fin del juego */
+
+.victoria{
+
+    background-color: lightgreen;
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+.derrota{
+
+    background-color: lightcoral;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.victoria p,
+.derrota p{
+
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.botones-fin{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media(min-width: 600px){
+
+    .botones-fin{
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .botones-fin button{
+
+        margin: 1rem;
+    }
+
+}
+
+
+
+/* Dialogs */
+
+.dialog-inicio,
+.dialog-busqueda,
+.dialog-info-letra, 
+.dialogo-fin{
+
+    margin: auto;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--whitesmoke);
+    border: 2px solid var(--anyil);
+    border-radius: 1rem;
+    box-shadow: 2px 2px 1px var(--anyil);
+}
+
+.dialog-inicio p,
+.dialog-busqueda p,
+.dialog-info-letra p{
+
+    margin-bottom: 2rem;
+}
+
+
+/*Mensaje fin */
+
+.div-mensaje{
+
+    margin-top: 2rem;
+    background-color: var(--azulMedio);
+    border: 2px solid var(--anyil);
+    border-radius: 1rem;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 2px 2px 1px var(--anyil);
+}
+
+.div-mensaje-texto{
+
+    display: inline-block;
+    padding: 1rem;
+    border: 2px solid var(--anyil);
+    border-radius: 3rem;
+    background-color: var(--whitesmoke);
+    box-shadow: 2px 2px 1px var(--anyil);
+}
+    

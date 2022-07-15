@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+
+    <!-- Rafael Rodríguez Real -->
+
+
+    <!-- CSS y google fonts-->
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet"> 
+
+</head>
+<body>
+
+    <header id="cabecera" class="cabecera">
+        <a href="index.html">
+            <h1 class="titulo">
+                <p>Juego del Ahorcado</p>
+            </h1>
+        </a>
+    </header>
+
+
+    <div class="contenedor">
+
+        <!--Pantalla de inicio -->
+
+        <section id="inicio">
+
+            <details class="explicacion">
+
+                <summary><strong>Explicación</strong></summary>
+                <br>
+                El ahorcado (también llamado colgado) es un juego de adivinanzas de lápiz y papel para dos o más jugadores. Un jugador piensa en una palabra, frase u oración y el otro trata de adivinarla según lo que sugiere por letras o dentro de un cierto número de oportunidades. 
+            </details>
+
+            <div id="botonera" class="botonera">
+
+                <div class="botonera-nombre">
+                    <label class="botonera-label" for="in_nombre">Introduce tu nombre:</label>
+                    <input class="botonera-input" type="text" name="in_nombre" id="in_nombre">
+                </div>
+
+                <div class="botonera-frase">
+                    <label class="botonera-label" for="in_frase">Frase a adivinar:</label>
+                    <input class="botonera-input" type="text" name="in_frase" id="in_frase">
+                </div>
+        
+                <div class="botonera-intentos">
+                    <label class="botonera-label" for="in_intentos">Número de intentos:</label>
+                    <input class="botonera-input" type="number" name="in_intentos" id="in_intentos" min="0">
+                </div>
+
+            </div>
+
+            <button id="btn_comenzar" class="btn">Comenzar</button>
+
+        </section>
+
+
+        <!-- Pantalla de juego -->
+
+        <section id="juego" class="juego">
+
+            <div id="casillero" class="casillero">
+            </div>
+
+            <div id="input-juego" class="input-juego">
+
+                <div class="introduce-letra">
+                    <label class="label-letra" for="in_letra">Busca una letra:</label>
+                    <input class="input-letra" type="text" name="in_letra" id="in_letra">
+                </div>
+                <button id="btn_buscar" class="btn">Buscar</button>
+            </div>
+
+            <div id="marcador" class="marcador">
+
+                <div class="marcador-variables">
+                    <p class="marcador-nombre">Nombre: <span id="out_nombre"></span></p>
+                    <p class="marcador-restantes">Letras restantes: <span id="out_num_letras"></span></p>
+                    <p class="marcador-intentos">Intentos restantes: <span id="out_num_intentos"></span></p>
+                </div>
+
+                <div class="marcador-erroneas">
+                    <h3 class="erroneas-titulo">Letras erróneas</h3>
+                    <div id="out_erroneas" class="out_erroneas"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="fin">
+        </section>
+
+
+    </div> <!-- .contenedor -->
+
+
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
